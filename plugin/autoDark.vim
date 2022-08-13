@@ -3,10 +3,9 @@
 " Switch automatically between light and dark modes on macOS Mojave and
 " onwards.
 " 
-" Maintainer:	Liang-Ting Chen <liang.ting.chen.tw@gmail.com>
-" Last Change:  2019-12-07
-" Version: 1.0.1
-" Repository: https://github.com/L-TChen/auto-dark-mode
+" Original Maintainer:	Liang-Ting Chen <liang.ting.chen.tw@gmail.com>
+" Maintainer: Zev
+" Repository: https://github.com/ZevveZ/auto-dark-mode
 " License: MIT
 
 if exists('g:AutoDarkLoaded') || &cp
@@ -28,6 +27,8 @@ func! s:ChangeBackground()
   redraw!
 endfunc
 
-augroup AutoDark
-  autocmd OSAppearanceChanged * call s:ChangeBackground()
-augroup END
+if exists('##OSAppearanceChanged')
+    augroup AutoDark
+        autocmd OSAppearanceChanged * call s:ChangeBackground()
+    augroup END
+endif

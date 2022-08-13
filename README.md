@@ -16,7 +16,7 @@ manually or automatically.
 
 For vim-plug, simply put the following line to your `.vimrc` as usual.
 ```
-Plug 'L-TChen/auto-dark-mode.vim'
+Plug 'ZevveZ/auto-dark-mode.vim'
 ```
 
 Enjoy it!
